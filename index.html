@@ -6,16 +6,42 @@
         <link rel="shortcut icon" href="images/hiokichi.ico" type="image/vnd.microsoft.icon">
         <!-- CSSフレームワーク：BULMA (https://bulma.io/documentation/) -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+        
+        <!-- awesome font: アイコンのフォント -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+        
         <title>HiComm</title>
     </head>
 
     <body>
     <!-- header -->
+
+    <!-- navi -->
+    <header class="hicomm-navbar">
+        <div class="navbar-end">
+            <span class="navbar-item">
+                <a href="#" class="fa fa-user fa-spin"> ログイン</a>
+            </span>
+        </div>
+    </header>
+
+    <!-- title -->
     <section class="hero is-dark">
         <div class="hero-body">
             <div class="container">
                 <h1 class="title frp-title"> HiComm </h1>
-            </div>
+                
+                <!-- なんちゃて検索バー -->
+                <div class="field has-addons">
+                    <div class="control is-expanded">
+                        <input class="input" type="text" placeholder="キーワード検索">
+                    </div>
+                    <div class="control">
+                        <a class="button is-info">
+                            <i class="fa fa-search"></i> 検索
+                        </a>
+                    </div>
+                </div>
         </div>
     </section>
 
