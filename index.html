@@ -60,10 +60,50 @@
     </section>
 
     <!-- main body -->
-    <section class="section"><!-- section は新しいコンテンツの開始位置-->
-        <div class="container"> <!-- containerはひとまとまり化する -->
-            テストページだよ
+    <section class="section">
+        <div class="section">
+            小ネタの投稿欄
         </div>
+        <main class="columns">
+            <div class="column">
+                <div class="columns">
+                    <div class="column">
+                        <ul class="questionboard">
+                            <li>C棟中央のらせん階段の段数はいくつなんですか？</li>
+                            <li>一番長く残業した人は誰ですか？何時に帰りましたか？</li>
+                        </ul>
+                    </div>
+                    <div class="column">
+                        <ul class="knowhowboard">
+                            <li>C2Fの牛乳屋さんのコーヒーに合うお菓子</li>
+                            <li>おすすめのレストランメニュー</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="submenu column is-2">
+                サブメニューのところ
+            </div>
+      　</main>
+        <style>
+            main {
+                background-color: #eeeeee;
+            }
+            main div.submenu{
+                background-color: #dddddd;
+            }
+            main ul.questionboard li{
+                border: 1px solid;
+                background-color: rgb(169, 255, 169);
+                margin-top: 10px;
+            }
+            main ul.knowhowboard li{
+                border: 1px solid;
+                background-color: rgb(255, 255, 181);
+                margin-top: 10px;
+            }
+        </style>
+      
     </section>
 
     <!-- footer -->
