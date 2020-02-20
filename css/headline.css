@@ -1,0 +1,25 @@
+.headline-red {
+  position: relative;
+  padding: 0.25em 0;
+}
+.headline-red:after {  
+  content: "";
+  display: block;
+  height: 4px;
+  background: -webkit-linear-gradient(to right, rgb(230, 90, 90), transparent);
+  background: linear-gradient(to right, rgb(230, 90, 90), transparent);
+}
+
+.headline-blue {
+  position: relative;
+  padding: 0.25em 0;
+}
+.headline-blue:after {  
+  content: "";
+  display: block;
+  height: 4px;
+  background: -webkit-linear-gradient(to right, rgb(90, 100, 230), transparent);
+  background: linear-gradient(to right, rgb(90, 100, 230), transparent);
+}
+
+
