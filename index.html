@@ -171,11 +171,11 @@
      @author yuckey
      @date   2020/2/19
     ================================================================================= -->
-    <label class="label">Markdown pattern1. <br>プレビュー開くと全画面になっちゃう．完成度が高いからなんとかして使いたい．</label>
     <section class="section">
-        <textarea id="editor" name="name" rows="8" cols="40">
-        </textarea>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
+        <div class="content">
+            <textarea id="editor" name="name" rows="8" cols="40"></textarea>
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
+        </div>
         <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
         <script>
             var simplemde = new SimpleMDE({ element: document.getElementById("editor") });
@@ -190,8 +190,7 @@
      @author yuckey
      @date   2020/2/19
     ================================================================================= -->
-    <label class="label">Markdown pattern2. <br>バグでMarkdownの記法が認識されない．たぶんBULMAに悪さされてる．</label>
-    <div id="editor">
+    <div class="content" id="editor">
         <textarea id="input"># hoge</textarea>
         <div id="result"></div>
     </div>
