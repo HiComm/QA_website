@@ -13,6 +13,9 @@
         <!-- marked.js: マークダウンのプレビュー表示用のスクリプト -->
         <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
+        <!-- マークダウンエディタ用の自作ボタン -->
+        <script src="js/markdown_buttons.js"></script>
+
         <!-- カスタム用のCSS -->
         <link rel="stylesheet" type="text/css" href="css/customize_bulma.css">
         <link rel="stylesheet" type="text/css" href="css/headline.css">
@@ -196,7 +199,7 @@
     <section class="section">
         <div class="field has-addons">
             <p class="control">
-            <button class="button">
+            <button class="button" onclick="bold_button()">
                 <i class="fa fa-bold"></i>
             </button>
             </p>
