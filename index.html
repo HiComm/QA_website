@@ -190,18 +190,65 @@
      @author yuckey
      @date   2020/2/19
     ================================================================================= -->
-    <div class="content" id="editor">
-        <textarea id="input"># hoge</textarea>
-        <div id="result"></div>
-    </div>
-    <script>
-      //MEMO normal version
-        document.getElementById('input').onkeyup = function(e) {
-            document.getElementById('result').innerHTML =
-            marked(document.getElementById('input').value);
-        };
-    </script>
 
+    <!-- simpleMDEっぽいボタン ****************-->
+    <section class="section">
+        <div class="field has-addons">
+            <p class="control">
+            <button class="button">
+                <i class="fa fa-bold"></i>
+            </button>
+            </p>
+            <p class="control">
+            <button class="button">
+                <i class="fa fa-italic"></i>
+            </button>
+            </p>
+            <p class="control">
+            <button class="button">
+                <i class="fa fa-header"></i>
+            </button>
+            </p>
+            <p class="control">
+                <button class="button">
+                    <i class="fa fa-list-ul"></i>
+                </button>
+            </p>
+            <p class="control">
+                <button class="button">
+                    <i class="fa fa-list-ol"></i>
+                </button>
+            </p>
+            <p class="control">
+                <button class="button">
+                    <i class="fa fa-quote-right"></i>
+                </button>
+            </p>
+            <p class="control">
+                <button class="button">
+                    <i class="fa fa-link"></i>
+                </button>
+            </p>
+            <p class="control">
+                <button class="button">
+                    <i class="fa fa-image"></i>
+                </button>
+            </p>
+        </div>
+        <!-- **************************************-->
+
+        <div class="content" id="editor">
+            <textarea id="input"># hoge</textarea>
+            <div id="result"></div>
+        </div>
+        <script>
+        //MEMO normal version
+            document.getElementById('input').onkeyup = function(e) {
+                document.getElementById('result').innerHTML =
+                marked(document.getElementById('input').value);
+            };
+        </script>
+    </section>
     <!-- ============================================================================ -->
 
     <!-- footer -->
