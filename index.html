@@ -15,6 +15,7 @@
 
         <!-- マークダウンエディタ用の自作ボタン -->
         <script src="js/markdown_buttons.js"></script>
+        <script src="js/markdown.js"></script>
 
         <!-- カスタム用のCSS -->
         <link rel="stylesheet" type="text/css" href="css/customize_bulma.css">
@@ -242,10 +243,9 @@
         <!-- **************************************-->
 
         <div class="content" id="editor">
-            <textarea id="input"># hoge</textarea>
+            <textarea id="input" onkeyup="markdown2html()"># hoge</textarea>
             <div id="result"></div>
         </div>
-        <script src="js/markdown.js"></script>
     </section>
     <!-- ============================================================================ -->
 
