@@ -16,6 +16,7 @@
         <!-- カスタム用のCSS -->
         <link rel="stylesheet" type="text/css" href="css/customize_bulma.css">
         <link rel="stylesheet" type="text/css" href="css/headline.css">
+        
 
         <title>HiComm</title>
     </head>
@@ -169,6 +170,7 @@
      @author yuckey
      @date   2020/2/19
     ================================================================================= -->
+    <!--
     <section class="section">
         <div class="content">
             <textarea id="editor" name="name" rows="8" cols="40"></textarea>
@@ -179,7 +181,8 @@
             var simplemde = new SimpleMDE({ element: document.getElementById("editor") });
         </script>
     </section>
-    
+    -->
+
     <!-- ============================================================================ -->
     
     <!-- ================================================================================
@@ -239,13 +242,7 @@
             <textarea id="input"># hoge</textarea>
             <div id="result"></div>
         </div>
-        <script>
-        //MEMO normal version
-            document.getElementById('input').onkeyup = function(e) {
-                document.getElementById('result').innerHTML =
-                marked(document.getElementById('input').value);
-            };
-        </script>
+        <script src="js/markdown.js"></script>
     </section>
     <!-- ============================================================================ -->
 
