@@ -14,8 +14,8 @@
         <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
         <!-- マークダウンエディタ用の自作ボタン -->
-        <script src="js/markdown_buttons.js"></script>
         <script src="js/markdown.js"></script>
+        <script src="js/markdown_buttons.js"></script>
 
         <!-- カスタム用のCSS -->
         <link rel="stylesheet" type="text/css" href="css/customize_bulma.css">
@@ -210,7 +210,7 @@
             </button>
             </p>
             <p class="control">
-            <button class="button">
+            <button class="button" onclick="header_button()">
                 <i class="fa fa-header"></i>
             </button>
             </p>
@@ -245,6 +245,8 @@
         <div class="content" id="editor">
             <textarea id="input" onkeyup="markdown2html()"># hoge</textarea>
             <div id="result"></div>
+            <!-- 初回の反映 -->
+            <script>markdown2html();</script>
         </div>
     </section>
     <!-- ============================================================================ -->
