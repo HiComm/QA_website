@@ -21,3 +21,6 @@
     height: 500px;
     padding: 10px;
     margin-right: 10px;
+    overflow-wrap: break-word;
+    overflow-y: auto;
+}
