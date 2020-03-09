@@ -15,4 +15,13 @@ window.onload = function() {
 function markdown2html() {
     document.getElementById('result').innerHTML =
     marked(document.getElementById('input').value);
+
+    //===============================================
+    //@brief  更新毎にシンタックスハイライトの判定します
+    //@author matsutake
+    //@date   2020/3/9
+    //===============================================
+    document.querySelectorAll('pre code').forEach((block) => {
+        hljs.highlightBlock(block);
+    });
 }
