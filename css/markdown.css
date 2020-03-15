@@ -4,7 +4,7 @@
 
 #input {
     border: 1px solid #ccc;
-    min-width: 500px;
+    min-width: 50%;
     min-height: 500px;
     resize: none;
     outline: none;
@@ -12,15 +12,18 @@
     background-color: #f6f6f6;
     font-family: 'Courier New', Courier, Monaco, monospace;
     padding: 20px;
-    margin-left: 10px;
 }
 
 #result {
     border: 1px solid #ccc;
-    width: 500px;
+    width: 50%;
     height: 500px;
     padding: 10px;
-    margin-right: 10px;
     overflow-wrap: break-word;
     overflow-y: auto;
+}
+
+#cheat-sheet {
+    width: 50%;
+    margin-left: 10px;
 }

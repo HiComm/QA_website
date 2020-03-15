@@ -85,3 +85,18 @@ function header_button(){
     
     markdown2html();
 }
+
+function question_button() {
+    var editor = document.getElementById('input');
+    var sheet = document.getElementById('cheat-sheet');
+    if (sheet.classList.contains('is-hidden')) {
+        sheet.classList.remove('is-hidden');
+    } else {
+        hiddenCheatSheet();
+    }
+    editor.focus();
+}
+
+function hiddenCheatSheet() {
+    document.getElementById('cheat-sheet').classList.add('is-hidden');
+}

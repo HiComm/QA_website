@@ -244,6 +244,11 @@
                     <i class="fa fa-image"></i>
                 </button>
             </p>
+            <p class="control">
+                <button class="button" data-target="cheat-sheet" onclick="question_button()">
+                    <i class="fa fa-question-circle"></i>
+                </button>
+            </p>
         </div>
         <!-- **************************************-->
         <!-- **************************************-->
@@ -251,9 +256,22 @@
         <div class="content" id="editor">
             <textarea id="input" onkeyup="markdown2html()"># hoge</textarea>
             <div id="result"></div>
+
+            <!-- markdownチートシートの表示 -->
+            <article id="cheat-sheet" class="message is-hidden">
+                <div class="message-header">
+                    <p>Markdown cheat sheet</p>
+                    <button class="delete" aria-label="delete" onclick="hiddenCheatSheet()"></button>
+                </div>
+                <div class="message-body">
+                    <h4>Emphasis</h4>
+                    <pre>**<strong>bold</strong>**<br>*<em>italic</em>*<br>~~<strike>strikethrough</strike>~~</pre>
+                </div>
+            </article>
             <!-- 初回の反映 -->
             <script>markdown2html();</script>
         </div>
+
     </section>
     <!-- ============================================================================ -->
 

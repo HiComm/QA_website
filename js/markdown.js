@@ -6,8 +6,8 @@ window.onload = function() {
             var elem = e.target;
             var val = elem.value;
             var pos = elem.selectionStart;
-            elem.value = val.substr(0, pos) + '\t' + val.substr(pos, val.length);
-            elem.setSelectionRange(pos + 1, pos + 1);
+            elem.value = val.substr(0, pos) + '    ' + val.substr(pos, val.length);
+            elem.setSelectionRange(pos + 4, pos + 4);
         }
     }
 }
