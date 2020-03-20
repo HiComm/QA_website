@@ -87,20 +87,16 @@ function header_button(){
 }
 
 function question_button() {
-    document.getElementById('input').focus();
-
-    var result = document.getElementById('result');
+    var editor = document.getElementById('input');
     var sheet = document.getElementById('cheat-sheet');
-
     if (sheet.classList.contains('is-hidden')) {
         sheet.classList.remove('is-hidden');
-        result.style.width = '25%';
     } else {
         hiddenCheatSheet();
     }
+    editor.focus();
 }
 
 function hiddenCheatSheet() {
     document.getElementById('cheat-sheet').classList.add('is-hidden');
-    document.getElementById('result').style.width = '50%';
 }
