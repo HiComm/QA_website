@@ -1,11 +1,29 @@
 <?php
-    print("TEST");
-    $link = mysqli_connect('172.19.150.181', 'develop', 'hicomm', 'hicomm_test');
+	ini_set('display_errors', "On");//enable error log output
 
-    // 接続状況をチェックします
-    if (mysqli_connect_errno()) {
-        die("データベースに接続できません:" . mysqli_connect_error() . "\n");
-    } else {
-        echo("データベースの接続に成功しました。\n");
-    }
+	print("TEST<br>");
+	print("TEST2");
+
+	$pdo_dsn = 'mysql:host=localhost;dbname=hicomm_test;charset=utf8;';
+	$pdo_user = 'develop';
+	$pdo_pass = 'hicomm';
+	$pdo_option = array(
+		PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+		PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+		PDO::ATTR_EMULATE_PREPARES => false,
+		PDO::ATTR_STRINGIFY_FETCHES => false
+	);
+
+	try {
+		$pdo = new PDO($pdo_dsn, $pdo_user, $pdo_pass, $pdo_option);
+	} catch (Exception $e) {
+		header('Content-Type: text/plain; charset=UTF-8', true, 500);
+		exit($e->getMessage());
+	}
+
+ 	$qry = $pdo->prepare('show columns from question');
+ 	$qry->execute();
+ 	foreach($qry->fetchAll() as $q){
+		nl2br(print_r($q));
+	}
 ?>
