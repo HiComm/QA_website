@@ -71,7 +71,9 @@ function markdown2html() {
     //@author matsutake
     //@date   2020/3/9
     //===============================================
-    document.querySelectorAll('pre code').forEach((block) => {
+    var nodelist = document.querySelectorAll('pre_code');
+    var node = Array.prototype.slice.call(nodelist,0); 
+    node.forEach(function(block){
         hljs.highlightBlock(block);
     });
 }
