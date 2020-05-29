@@ -73,9 +73,7 @@
 		<dt>
       <br><center>質問タイトル<br>
       <font size="3">2020/04/xx</font></center>
-      <table border="1" width="400" align="right"><td><font size="3"> &ensp;評価&emsp;値$&emsp; </font></td>
-      <td><font size="3"> &ensp;クリップ&emsp;値$&emsp; </font></td>
-      <td><font size="3"> &ensp;VIEW&emsp;値$&emsp; </font></td></table>
+      <table border="1" width="150" align="right"><td><font size="3"> &ensp;いいね&emsp;値$&emsp; </font></td></table>
       <br>
       </dt>
 	</dl>
