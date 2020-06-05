@@ -17,6 +17,21 @@
         <link rel="stylesheet" type="text/css" href="css/customize_bulma.css">
         <link rel="stylesheet" type="text/css" href="css/headline.css">
 
+        <!--送信用のjavascript-->
+        <script>
+            xhr = new XMLHttpRequest();
+
+            function post() {
+                xhr.open('POST', 'php/post_question.php', true);
+                xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded;charset=UTF-8');
+                var title = document.getElementById("title").value;
+                var contents = document.getElementById("editor").value
+                var request = "userid=" + "12345678" + "&title=" + title + "&body=" + contents;
+                xhr.send(request);
+            }
+        </script>
+
+
         <title>HiComm</title>
     </head>
 
@@ -46,24 +61,6 @@
     </nav>
 
     <!-- title -->
-    <!-- ================================================================================
-     SimpleMDE
-     @brief  Markdownの埋め込み．
-     @author yuckey
-     @date   2020/2/19
-    ================================================================================= -->
-    <section class="section">
-        <div class="content">
-            <textarea id="editor" name="name" rows="8" cols="40"></textarea>
-            <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
-        </div>
-        <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
-        <script>
-            var simplemde = new SimpleMDE({ element: document.getElementById("editor") });
-        </script>
-    </section>
-    
-    <!-- ============================================================================ -->
     
     <!-- ================================================================================
      marked.js
@@ -74,6 +71,9 @@
 
     <!-- simpleMDEっぽいボタン ****************-->
     <section class="section">
+        <input class="input" placeholder="質問のタイトルを入力" id=title>
+
+
         <div class="field has-addons">
             <p class="control">
             <button class="button">
@@ -129,8 +129,11 @@
                 marked(document.getElementById('input').value);
             };
         </script>
+        <button onclick="post();">送信する</button>
     </section>
     <!-- ============================================================================ -->
+    
+
 
     <!-- footer -->
     <footer class="footer">
