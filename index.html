@@ -102,11 +102,12 @@
                     <div class="column has-background-grey-light">
                         <h1 class="title headline-red">Q＆A</h1>
                         <!--yagi コピペのヤバイやつ　-->
-			<form method="POST" name="form1" action="./answer.php">
+			<form method="GET" name="form1" action="./answer.php">
+        <!-- valueをtest_idから、データベースでとってきたidに　-->
 			<input type="hidden" name="question_id" value="test_id">
 			<a href="javascript:form1.submit()">
 			<div class="box">
-			
+
                             <article class="media">
                                 <div class="media-left">
                                 </div>

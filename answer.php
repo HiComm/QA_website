@@ -71,9 +71,36 @@
 <div id="qtitle">
 	<dl>
 		<dt>
-      <br><center>質問タイトル<br>
-      <font size="3">2020/04/xx</font></center>
-      <table border="1" width="150" align="right"><td><font size="3"> &ensp;いいね&emsp;値$&emsp; </font></td></table>
+      <br><center>
+      <?php
+      	include("php/accessDB.php");
+      	$id = $_GET["question_id"];
+      	$qry = $pdo->prepare('select * from question where question_id = "'.$id.'"');
+      	$qry->execute();
+        $result = $qry->fetch();
+      	print_r($result["title"]);
+      ?><br>
+      <font size="3">
+      <?php
+      	include("php/accessDB.php");
+      	$id = $_GET["question_id"];
+      	$qry = $pdo->prepare('select * from question where question_id = "'.$id.'"');
+      	$qry->execute();
+        $result = $qry->fetch();
+      	print_r($result["datetime"]);
+      ?></font></center>
+      <table border="1" width="100" align="right">
+      <td><font size="3">&ensp;評価&emsp;
+      <?php
+      	include("php/accessDB.php");
+      	$id = $_GET["question_id"];
+      	$qry = $pdo->prepare('select * from question where question_id = "'.$id.'"');
+      	$qry->execute();
+        $result = $qry->fetch();
+      	print_r($result["iine"]);
+      ?></font></td>
+      </table>
+
       <br>
       </dt>
 	</dl>
@@ -82,10 +109,11 @@
   <br><br><center>
 <?php
 	include("php/accessDB.php");
-	$id = $_POST["question_id"];
+	$id = $_GET["question_id"];
 	$qry = $pdo->prepare('select * from question where question_id = "'.$id.'"');
 	$qry->execute();
-	print_r(($qry->fetch())["text"]);
+  $result = $qry->fetch();
+	print_r($result["text"]);
 ?>
   </center><br><br>
 </div>
@@ -146,7 +174,7 @@ html, body {
   <ul>
   ここに回答する<br>
   <div id="respondent">
-  2020/04/xx&enspアイコン&ensp;Name<br><br>
+  2020/04/xx&ensp;アイコン&ensp;Name<br><br>
     <button class="button">＋　高評価</button>
     <button class="button">ー　低評価</button>
     <button class="button">コメント</button>
