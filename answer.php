@@ -108,7 +108,7 @@
   <br><br><center>
 <?php
 	include("php/accessDB.php");
-	$id = $_GET["question_id"];
+  $id = $_GET["question_id"];
 	$qry = $pdo->prepare('select * from question where question_id = "'.$id.'"');
 	$qry->execute();
   $result = $qry->fetch();
@@ -169,9 +169,24 @@ html, body {
 </style>
 <!-- 回答 -->
 <div id="atitle">
-  <font size="5"><center>回答</font><font color="red" size="5">&ensp;x&ensp;</font><font size="5">件</center></font>
+  <font size="5"><center>回答</font><font color="red" size="5">&ensp;
+  <?php
+  	include("php/accessDB.php");
+    $qry = $pdo->prepare('select count(*) from answer');
+  	$qry->execute();
+    $result = $qry->fetch();
+  	print_r($result['count(*)']);
+  ?>
+  &ensp;</font><font size="5">件</center></font>
   <ul>
-  ここに回答する<br>
+  <?php
+  	include("php/accessDB.php");
+    $id = $_GET["question_id"];
+  	$qry = $pdo->prepare('select * from answer where question_id = "'.$id.'"');
+  	$qry->execute();
+    $result = $qry->fetch();
+  	print_r($result["text"]);
+  ?><br>
   <div id="respondent">
   2020/04/xx&ensp;アイコン&ensp;Name<br><br>
     <button class="button">＋　高評価</button>
