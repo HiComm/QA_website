@@ -1,0 +1,9 @@
+1. XAMPP起動
+2. Apache, MySQLをStart
+3. （データベース）http://localhost/phpmyadmin/index.php を開く
+3.1. データベースを作成する（と、phpファイルのデータベース部に値が入る）
+＊データベースの形は\\fileserver1\FREE\その他\soft_T-ACE_2019\要件定義\データベース型名定義.xlsxを参照
+4. http://localhost//QA_website/ を開く
+* 実行ファイルはそれぞれ作った場所にある\xampp\htdocs\QA\website
+
+開発環境構築はやり方を忘れてしまった
