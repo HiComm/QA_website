@@ -128,6 +128,7 @@
 <!--
 ul, ol {
   color: #1e366a;
+  border-collapse: collapse;
   border-top: solid #1e366a 1px;/*上のボーダー*/
   border-bottom: solid #1e366a 1px;/*下のボーダー*/
   padding: 0.5em 0 0.5em 1.5em;
@@ -179,19 +180,34 @@ html, body {
   	print_r($result['count(*)']);
   ?>
   &ensp;</font><font size="5">件</center></font>
-  <ul>
   <?php
   	include("php/accessDB.php");
-    $id = $_GET["question_id"];
-  	$qry = $pdo->prepare('select * from answer where question_id = "'.$id.'"');
+    $qry = $pdo->prepare('select count(*) from answer');
   	$qry->execute();
     $result = $qry->fetch();
-  	print_r($result["text"]);
+    $answerNum = $result['count(*)'];
+
+    $qry = $pdo->prepare('select * from answer');
+  	$qry->execute();
+    for($i = 0;$i < $answerNum; $i++){
+      $result = $qry->fetch();
+      print_r("<ul>" . $result["text"] . "<br>");
   ?><br>
   <div id="respondent">
-  2020/04/xx&ensp;アイコン&ensp;Name<br><br>
+  <?php
+      $id = $result["answer_id"];
+      $qryId = $pdo->prepare('select * from answer where answer_id = "'.$id.'"');
+      $qryId->execute();
+      $result = $qryId->fetch();
+      print_r($result['user_id'] . "&emsp;");
+      print_r($result['datetime'] . "&emsp;");
+      ?>
+  <br><br>
     <button class="button">＋　高評価</button>
     <button class="button">ー　低評価</button>
     <button class="button">コメント</button>
   </div>
-  </ul>
+    </ul>
+  <?php
+    }
+   ?>
