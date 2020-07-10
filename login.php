@@ -44,9 +44,11 @@
 			
 			<div class="column">
 				<label class="has-text-left has-text-light"> 新たに登録する場合 　<i class="fa fa-hand-o-right"></i></label>
+				<a href="./register.html">
 				<button class="button is-success">
 					Sign Up
 				</button>
+				</a>
 			</div>
 		</div>
 	</div>
