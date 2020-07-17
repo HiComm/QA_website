@@ -1,0 +1,102 @@
+#------------------------------------------------------------------------------
+# 自分のパソコンにデータベースをインポートする
+#------------------------------------------------------------------------------
+$ mysql -u root
+
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 8
+Server version: 10.4.11-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]>
+
+> create user `develop`@`localhost` identified by 'hicomm';
+Query OK, 0 rows affected (0.003 sec)
+
+> create database hicomm_test;
+Query OK, 1 row affected (0.001 sec)
+
+> grant all on hicomm_test.* to develop@localhost;
+Query OK, 0 rows affected (0.003 sec)
+
+>\q
+Bye
+
+$ mysql -u develop -p hicomm_test < \\fileserver1\FREE\その他\soft_T-ACE_2019\ソフトウェア\hicomm.sql
+Enter password: ******
+
+#------------------------------------------------------------------------------
+# 動作確認
+#------------------------------------------------------------------------------
+$ mysql -u develop -p
+Enter password: ******
+
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 10
+Server version: 10.4.11-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]>
+
+> show databases;
++--------------------+
+| Database           |
++--------------------+
+| hicomm_test        |
+| information_schema |
+| test               |
++--------------------+
+3 rows in set (0.001 sec)
+
+> MariaDB [(none)]> use hicomm_test;
+Database changed
+
+> show tables;
++-----------------------+
+| Tables_in_hicomm_test |
++-----------------------+
+| answer                |
+| question              |
+| user                  |
++-----------------------+
+3 rows in set (0.001 sec)
+
+#------------------------------------------------------------------------------
+# apacheの設定
+#------------------------------------------------------------------------------
+xampp control panelを起動
+configを選択
+
+以下の変更を加える
+Apache(httpd.conf)
+ctrl+fで80を検索して80を81や8080などに変更する
+Listen 80
+ServerName localhost:8080
+
+Apache(httpd-ssl.conf)
+ctrl+fで443を検索して4433などに変更する
+Listen 443
+<VirtualHost _default_:4433>
+ServerName www.example.com:4433
+
+ブラウザでlocalhost:8080と入力してxamppのページが出てきたらOK
+
+データベースをGUIで操作したい人は以下のリンクへ
+localhost:8080/phpmyadmin/index.php
+#------------------------------------------------------------------------------
+## +α
+#------------------------------------------------------------------------------
+# apacheで開くルートフォルダを"C:xampp\htdocs"から変えたい人は下記を参照
+https://www.koreyome.com/web/xampp-htdocs-root-change/
+
+こっちの場合は*:80のところを*:8080にしないと動かないかも
+https://qiita.com/nbkn/items/e72b283c54403a30b2e1
+
+# xamppのmysqlが起動しないときは...
+https://y-a-d.hatenablog.jp/entry/2020/01/28/183000
