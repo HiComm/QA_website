@@ -118,7 +118,7 @@
   </center><br><br>
 </div>
 <div id="ans">
-    <a class="button is-primary" style="margin-right: 5px">
+    <a class="button is-primary" style="margin-right: 5px" href="./writeAnswer.php">
         <i class="fa fa-pencil-square"></i>回答する
     </a>
 </div>
